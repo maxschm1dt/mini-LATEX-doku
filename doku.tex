@@ -117,8 +117,23 @@ Wenn du Apfel verwendest ist dir nicht mehr zu helfen.
     
 \end{figure}
 Sollte nach einem Zeilenumbruch ein komischer Einzug entstehen kann man dem mit \lstinline|\noindent| entgehen.
-    
+
 \section{Sections}
+Sections sind die einzelen Kapitel des Dokuments, sie werden automatisch numerieriert.
+Ein neues Kapitel erstellt man so:
+    \begin{lstlisting}
+    \section{Name des Kapitels}
+    \end{lstlisting}
+Will man ein Unterkapitel erstellen schreibt man ein sub davor, das kann man beliebig
+oft machen:
+\begin{lstlisting}
+    \section{Kapitel}
+        \subsection{Unterkapitel}
+            \subsubsection{Unterunterkapitel}
+        \subsection{Zweites Unterkapitel von Kapitel}
+\end{lstlisting}
+Das Inhaltsverzeichnis wird automatisch aktualisiert.
+
 \section{Tabellen, Listen}
 \section{Abblidungen}
 \section{Mathematische Formeln}
