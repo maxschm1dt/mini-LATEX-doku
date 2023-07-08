@@ -1,9 +1,10 @@
 \babel@toc {ngerman}{}\relax 
-\contentsline {section}{\numberline {1}Warum und wann \LaTeX ?}{2}{}%
-\contentsline {section}{\numberline {2}\LaTeX \ Editor Setup}{2}{}%
-\contentsline {section}{\numberline {3}Ein Dokument erstellen}{2}{}%
-\contentsline {subsection}{\numberline {3.1}Seitenränder, Sprache und Zeilenabstände}{2}{}%
-\contentsline {section}{\numberline {4}Titelseite und Inhaltsverzeichnis}{2}{}%
-\contentsline {section}{\numberline {5}Sections und Co}{2}{}%
-\contentsline {section}{\numberline {6}Tabellen, Listen}{2}{}%
-\contentsline {section}{\numberline {7}Abblidungen}{2}{}%
+\contentsline {section}{\numberline {1}\LaTeX \ Editor Setup}{2}{}%
+\contentsline {section}{\numberline {2}Ein Dokument erstellen}{2}{}%
+\contentsline {section}{\numberline {3}Titelseite und Inhaltsverzeichnis}{2}{}%
+\contentsline {section}{\numberline {4}Text Formatierung}{3}{}%
+\contentsline {section}{\numberline {5}Sections}{3}{}%
+\contentsline {section}{\numberline {6}Tabellen, Listen}{3}{}%
+\contentsline {section}{\numberline {7}Abblidungen}{3}{}%
+\contentsline {section}{\numberline {8}Mathematische Formeln}{3}{}%
+\contentsline {section}{\numberline {9}Code Snipets}{3}{}%

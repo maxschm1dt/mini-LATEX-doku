@@ -2,6 +2,8 @@
 \usepackage[ngerman]{babel}
 \usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
 \usepackage[onehalfspacing]{setspace}
+\usepackage{booktabs}
+\usepackage{float}
 
 \usepackage{listings}
 \usepackage{xcolor}
@@ -44,29 +46,78 @@
 \thispagestyle{empty}
 \newpage
 
-\section{Warum und wann \LaTeX?}
-    JA
-
 \section{\LaTeX\ Editor Setup}
 
 \section{Ein Dokument erstellen}
     Um ein Dokument zu erstellen einfach einen neuen Ordner erstellen und dann in VS Code
     eine neue Datei mit der Endung .tex erstellen.
-    Folgender Code ist die Mindestanforderung damit ein Compiler den Code compilen kann:
+    Folgender Code ist eigentlich immer ein guter Start:
     \begin{lstlisting}
     \documentclass{article}
+    \usepackage[ngerman]{babel} %damit von LaTeX erstellte Texte auf Deutsch sind
+    \usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry} %Seitenraender
+    \usepackage[onehalfspacing]{setspace} %Zeilenabstaende
+
     \begin{document}
     Hier koennte Ihre Werbung stehen!
     \end{document}
     \end{lstlisting}
     Mit dem günen Pfeil oben rechts in VS Code kann das Dokument das erste mal compiled werden.
     Ab dann wird nach dem Speichern (Strg + S) automatisch immer wieder compiled und die PDF neu erstellt.
-        \subsection{Seitenränder, Sprache und Zeilenabstände}
         
 \section{Titelseite und Inhaltsverzeichnis}
-\section{Sections und Co}
+    Damit \LaTeX weiß was auf der Titelseite Stehen soll muss das zuerst definiert werden: Es kann alles in die Klammern geschrieben werden.
+    \begin{lstlisting}
+    \title{Titel des Dokuments}
+    \author{Max Schmidt}
+    \date{Juli 23}
+    \end{lstlisting}
+    Um die Titelseite dann zu erstellen:
+    \begin{lstlisting}
+    \maketitle
+    \thispagestyle{empty} %wenn auf der Titelseite keine Seitenzahl stehen soll
+    \newpage %fuer einen Seitenumbruch
+    \end{lstlisting}
+    Um das Inhaltsverzeichnis zu erstellen:
+    \begin{lstlisting}
+    \tableofcontents
+    \thispagestyle{empty}  %wenn auf der Seite keine Seitenzahl stehen soll
+    \newpage %fuer einen Seitenumbruch
+        \end{lstlisting}
+\section{Text Formatierung}
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{l|l}
+        \textbf{Formatierung} & \textbf{Beispielcode} \\
+        \midrule
+        Fett & \lstinline|\textbf{Fetter Text}| \\
+        Kursiv & \lstinline|\textit{Kursiver Text}| \\
+        Unterstrichen & \lstinline|\underline{Unterstrichener Text}| \\
+        Durchgestrichen & \lstinline|\sout{Durchgestrichener Text}| \\
+        Schriftgröße & \lstinline|\tiny, \scriptsize, \footnotesize,| \\
+        & \lstinline|\small, \normalsize, \large,| \\
+        & \lstinline|\Large, \huge, \Huge| \\
+        Schriftart & \lstinline|\textsf{Serifenlose Schrift}| \\
+        & \lstinline|\texttt{Monospaced Schrift}| \\
+        Schriftfarbe & \lstinline|\textcolor{Farbe}{Text}| \\
+        Hoch- / Tiefstellung & \lstinline|\textsuperscript{Hochgestellter Text}| \\
+        & \lstinline|\textsubscript{Tiefgestellter Text}| \\
+        Zeilenumbruch & \lstinline|\\| oder \lstinline|\newline| \\
+        Aufzählungen & \lstinline|\begin{itemize}| \\
+        & \lstinline|\item Erster Punkt| \\
+        & \lstinline|\item Zweiter Punkt| \\
+        & \lstinline|\end{itemize}| \\
+        \end{tabular}
+    
+    \centering
+    
+\end{figure}
+    
+\section{Sections}
 \section{Tabellen, Listen}
 \section{Abblidungen}
+\section{Mathematische Formeln}
+\section{Code Snipets}
 
 
 \end{document}
