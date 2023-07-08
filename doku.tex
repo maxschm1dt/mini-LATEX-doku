@@ -47,6 +47,12 @@
 \newpage
 
 \section{\LaTeX\ Editor Setup}
+Für Windoofs: Die drei Sachen herunterladen und installieren: \\
+https://code.visualstudio.com/, https://miktex.org/download, https://strawberryperl.com/ \\
+In VS-Code die Extension LaTeX Workshop installieren. MikTex Console öffnen (wenn es nicht geht dann schließen und wieder öffen).
+In der MikTex Console unter Updates Check for Updates und dann Update now. Fertig \\
+Wenn du Linux verwendest kannst dus selber besser :) \\
+Wenn du Apfel verwendest ist dir nicht mehr zu helfen.
 
 \section{Ein Dokument erstellen}
     Um ein Dokument zu erstellen einfach einen neuen Ordner erstellen und dann in VS Code
@@ -85,6 +91,8 @@
     \newpage %fuer einen Seitenumbruch
         \end{lstlisting}
 \section{Text Formatierung}
+\LaTeX\ ist kein \glqq What you see is what you get\grqq also Hilft es dir nix im Code Zeilenumbrüche zu machen.
+
 \begin{figure}[H]
     \centering
     \begin{tabular}{l|l}
@@ -103,15 +111,12 @@
         Hoch- / Tiefstellung & \lstinline|\textsuperscript{Hochgestellter Text}| \\
         & \lstinline|\textsubscript{Tiefgestellter Text}| \\
         Zeilenumbruch & \lstinline|\\| oder \lstinline|\newline| \\
-        Aufzählungen & \lstinline|\begin{itemize}| \\
-        & \lstinline|\item Erster Punkt| \\
-        & \lstinline|\item Zweiter Punkt| \\
-        & \lstinline|\end{itemize}| \\
         \end{tabular}
-    
     \centering
     
+    
 \end{figure}
+Sollte nach einem Zeilenumbruch ein komischer Einzug entstehen kann man dem mit \lstinline|\noindent| entgehen.
     
 \section{Sections}
 \section{Tabellen, Listen}
