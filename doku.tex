@@ -18,6 +18,14 @@
     urlcolor=black
 }
 
+%section with subtitle
+\newcommand{\sectionwithsubtitle}[2]{\section[\textit{#1} - #2]{\textit{#1} {\large #2}}}
+
+%start with zero
+\setcounter{section}{-1}
+
+
+
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -45,7 +53,7 @@
 \lstset{style=mystyle}
 
 \begin{document}
-\title{Mini-\LaTeX-Doku}
+\title{\href{https://floriansagerer.de/mini-LATEX-doku/}{Mini-\LaTeX-Doku}}
 \author{\href{mailto:to.maxschmidt@pm.me}{Max Schmidt}, \href{mailto:f.sagerer@protonmail.com}{Florian Sagerer}}
 
 \maketitle
@@ -55,9 +63,9 @@
 \thispagestyle{empty}
 \newpage
 
-\section{\LaTeX\ Setup}
-\subsection{Installation}
-\subsubsection{Windows}
+\section{\LaTeX\ Installation}
+Das ist kurz lästig, aber da müssen wir durch.
+\subsection{Windows}
 Für Windoofs: Die drei Sachen herunterladen und installieren: 
 \begin{itemize}
     \item \href{https://code.visualstudio.com/}{Visual Studio Code (code.visualstudio.com)}
@@ -65,17 +73,17 @@ Für Windoofs: Die drei Sachen herunterladen und installieren:
     \item \href{https://strawberryperl.com/}{Strawberry Perl (strawberryperl.com)}
 \end{itemize}
 In VS-Code die Extension \href{https://open-vsx.org/extension/James-Yu/latex-workshop}{LaTeX Workshop} installieren. MikTex Console öffnen (wenn es nicht geht dann schließen und wieder öffen).
-In der MikTex Console unter Updates Check for Updates und dann Update now. Fertig 
-\subsubsection{Linux}
+In der MikTex Console unter Updates Check for Updates und dann Update now. Fertig. 
+\subsection{Linux}
 \begin{itemize}
     \item \href{https://code.visualstudio.com/}{Visual Studio Code (code.visualstudio.com)}
-    \item \href{https://tug.org/texlive/}{TeX Live (tug.org/texlive/) - gibt es auf den meisten Distributionen}
+    \item \href{https://tug.org/texlive}{TeX Live (tug.org/texlive/) - gibt es auf den meisten Distributionen}
 \end{itemize}
 
-\subsubsection{MacOS}
+\subsection{MacOS}
 Keine Ahnung, finds selbst heraus.
 
-\section{Ein Dokument erstellen}
+\sectionwithsubtitle{Los geht's!}{Ein Dokument erstellen}
     Um ein Dokument zu erstellen einfach einen neuen Ordner erstellen und dann in VS Code
     eine neue Datei mit der Endung .tex erstellen.
     Folgender Code ist eigentlich immer ein guter Start:
@@ -89,10 +97,13 @@ Keine Ahnung, finds selbst heraus.
     Hier koennte Ihre Werbung stehen!
     \end{document}
     \end{lstlisting}
-    Mit dem günen Pfeil oben rechts in VS Code kann das Dokument das erste mal compiled werden.
-    Ab dann wird nach dem Speichern (Strg + S) automatisch immer wieder compiled und die PDF neu erstellt.
+    Mit dem grünen Pfeil oben rechts in VS Code kann das Dokument das erste mal compiled werden.
+    Ab dann wird nach dem Speichern (Strg + S) automatisch immer wieder compiled und die PDF neu erstellt.\\
+
+    Tipp: Man kann in VS-Code Fenster per Drag-and-Drop nebeneinander schieben. 
+    Dann kannst du links tippen und rechts gucken.
         
-\section{Titelseite und Inhaltsverzeichnis}
+\sectionwithsubtitle{Worum geht's?}{Titelseite und Inhaltsverzeichnis}
     Damit \LaTeX weiß was auf der Titelseite Stehen soll muss das zuerst definiert werden: Es kann alles in die Klammern geschrieben werden.
     \begin{lstlisting}
     \title{Titel des Dokuments}
@@ -111,7 +122,9 @@ Keine Ahnung, finds selbst heraus.
     \thispagestyle{empty}  %wenn auf der Seite keine Seitenzahl stehen soll
     \newpage %fuer einen Seitenumbruch
         \end{lstlisting}
-\section{Text Formatierung}
+
+
+\sectionwithsubtitle{Fett, klein, schief,...}{Text Formatierung}
 \LaTeX\ ist kein \glqq What you see is what you get\grqq also Hilft es dir nix im Code Zeilenumbrüche zu machen.
 
 \begin{figure}[H]
@@ -139,7 +152,7 @@ Keine Ahnung, finds selbst heraus.
 \end{figure}
 Sollte nach einem Zeilenumbruch ein komischer Einzug entstehen kann man dem mit \lstinline|\noindent| entgehen.
 
-\section{Sections}
+\sectionwithsubtitle{Recht und Ordnung!}{Sections}
 Sections sind die einzelen Kapitel des Dokuments, sie werden automatisch numerieriert.
 Ein neues Kapitel erstellt man so:
     \begin{lstlisting}
@@ -155,10 +168,10 @@ oft machen:
 \end{lstlisting}
 Das Inhaltsverzeichnis wird automatisch aktualisiert.
 
-\section{Tabellen, Listen}
-\section{Abblidungen}
-\section{Mathematische Formeln}
-\section{Code Snipets}
+\sectionwithsubtitle{Eins nach dem Anderen.}{Tabellen, Listen}
+\sectionwithsubtitle{Was zum Anschauen!}{Abbildungen}
+\sectionwithsubtitle{Rechnen.}{Mathematische Formeln}
+\sectionwithsubtitle{Programmieren.}{Code Snippets}
 
 
 \end{document}
