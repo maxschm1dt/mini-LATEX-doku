@@ -4,6 +4,8 @@
 \usepackage[onehalfspacing]{setspace}
 \usepackage{booktabs}
 \usepackage{float}
+\usepackage{enumitem}
+\usepackage{array}
 
 \usepackage{listings}
 \usepackage{xcolor}
@@ -15,7 +17,7 @@
     citecolor=black,
     filecolor=black,
     linkcolor=black,
-    urlcolor=black
+    urlcolor=blue
 }
 
 %section with subtitle
@@ -23,6 +25,7 @@
 
 %start with zero
 \setcounter{section}{-1}
+\setlist{nolistsep}
 
 
 
@@ -65,6 +68,8 @@
 
 \section{\LaTeX\ Installation}
 Das ist kurz lästig, aber da müssen wir durch.
+\subsection{Im Browser}
+Geh auf \href{https://www.overleaf.com/}{Overleaf (overleaf.com)}, melde dich an, fertig.
 \subsection{Windows}
 Für Windoofs: Die drei Sachen herunterladen und installieren: 
 \begin{itemize}
@@ -155,9 +160,9 @@ Sollte nach einem Zeilenumbruch ein komischer Einzug entstehen kann man dem mit 
 \sectionwithsubtitle{Recht und Ordnung!}{Sections}
 Sections sind die einzelen Kapitel des Dokuments, sie werden automatisch numerieriert.
 Ein neues Kapitel erstellt man so:
-    \begin{lstlisting}
+\begin{lstlisting}
     \section{Name des Kapitels}
-    \end{lstlisting}
+\end{lstlisting}
 Will man ein Unterkapitel erstellen schreibt man ein sub davor, das kann man beliebig
 oft machen:
 \begin{lstlisting}
@@ -166,12 +171,119 @@ oft machen:
             \subsubsection{Unterunterkapitel}
         \subsection{Zweites Unterkapitel von Kapitel}
 \end{lstlisting}
+Wenn man eine Kapitel erstellen will, dass nicht im Inhaltsverzeichnis zu sehen sein soll und auch nicht
+in der Nummerrierung beachten wird, kann man das mit einem sternchen nach dem keyword machen:
+\begin{lstlisting}
+    \subsection*{Geheim}
+\end{lstlisting}
 Das Inhaltsverzeichnis wird automatisch aktualisiert.
 
 \sectionwithsubtitle{Eins nach dem Anderen.}{Tabellen, Listen}
+\subsection{Listen}
+Sehr gut und ausführlich \href{https://www.overleaf.com/learn/latex/Lists}{Overleaf Doku zu Listen (overleaf.com/learn/latex/Lists)}
+\subsubsection{Bulletlist}
+So macht man eine einfache Liste aus Bulltepoints:
+\begin{lstlisting}
+    \usepackage{enumitem}
+    \setlist{nolistsep} %das reicht einmal im ganzen dokument und dient nur dazu abstand vor einer liste kleiner zu machen
+    \begin{itemize}[noitemsep] %das [noitemsep] ist optional und dient nur dazu den abstand zwischen den Bulltepoints huebscher zu machen
+        \item erster Punkt
+        \item zweiter Punkt
+        \item dritter Punkt
+        \item ja so gehts weiter
+    \end{itemize}
+\end{lstlisting}
+So sieht die dann aus:
+\begin{itemize}[noitemsep]
+    \item erster Punkt
+    \item zweiter Punkt
+    \item dritter Punkt
+    \item ja so gehts weiter
+\end{itemize}
+
+\subsubsection{Nummerierte Listen}
+\begin{tabular}{m{10cm} m{5cm}}
+    Code: & Aussehen: \\
+    \begin{lstlisting}
+        \usepackage{enumitem}
+        \setlist{nolistsep}
+        \begin{enumerate}[noitemsep]
+            \item huhu
+            \item das ist
+            \item eine nummerierte Liste
+        \end{enumerate}
+    \end{lstlisting} &
+    \begin{enumerate}[noitemsep]
+        \item huhu
+        \item das ist
+        \item eine nummerierte Liste
+    \end{enumerate}
+\end{tabular}\\
+
+
+
+\subsubsection{Listen in Listen}
+\begin{tabular}{m{10cm} m{5cm}}
+    Code: & Aussehen: \\
+    \begin{lstlisting}
+        \usepackage{enumitem}
+        \setlist{nolistsep}
+        \begin{enumerate}[noitemsep]
+            \item huhu
+            \item das ist
+            \begin{itemize}
+                \item ist eine 
+                \item liste in der liste
+            \end{itemize}
+        \end{enumerate}
+    \end{lstlisting} &
+    \begin{enumerate}[noitemsep]
+        \item huhu
+        \item das ist
+        \begin{itemize}[noitemsep]
+            \item ist eine 
+            \item liste in der liste
+        \end{itemize}
+    \end{enumerate}
+\end{tabular}\\
+
+
+
+\subsection{Tabellen}
+\subsubsection{Grundgerüst einer Tabelle}
+
+\begin{tabular}{m{10cm} m{5cm}}
+    Code: & Aussehen: \\
+    \begin{lstlisting}
+    \begin{tabular}{l|c|r}
+        links & mitte & rechts \\ 
+        \hline
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+    \end{tabular}
+    \end{lstlisting} &
+
+    \begin{tabular}{l|c|r}
+        links & mitte & rechts \\
+        \hline
+        1 & 2 & 3 \\
+        4 & 5 & 6 \\
+    \end{tabular}
+
+\end{tabular}\\
+\begin{tabular}{c | m{14cm} }
+    Zeile & Erklärung \\
+    \hline
+    1 & in den zweiten Klammer werden die Spalten definiert, jede Spalten wir durch einen Buchstaben 
+    representiert, l r c asdasdasdasdasdasdasd  \\
+\end{tabular}
+
+
+
 \sectionwithsubtitle{Was zum Anschauen!}{Abbildungen}
 \sectionwithsubtitle{Rechnen.}{Mathematische Formeln}
 \sectionwithsubtitle{Programmieren.}{Code Snippets}
+\sectionwithsubtitle{Wunderschöner \LaTeX-Zauber}{Formatierungsbeispiele}
 
 
 \end{document}
