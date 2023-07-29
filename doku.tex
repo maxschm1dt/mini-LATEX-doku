@@ -14,14 +14,14 @@
 \usepackage{hyperref} 
 \hypersetup{
     colorlinks,
-    citecolor=black,
-    filecolor=black,
+    citecolor=blue,
+    filecolor=blue,
     linkcolor=black,
     urlcolor=blue
 }
 
 %section with subtitle
-\newcommand{\sectionwithsubtitle}[2]{\section[\textit{#1} - #2]{\textit{#1} {\large #2}}}
+\newcommand{\sectionwithsubtitle}[2]{\section[\textit{#1} - #2]{\textit{#1} {\large #2}} \label{#2}}
 
 %start with zero
 \setcounter{section}{-1}
@@ -56,8 +56,10 @@
 \lstset{style=mystyle}
 
 \begin{document}
-\title{\href{https://floriansagerer.de/mini-LATEX-doku/}{Mini-\LaTeX-Doku}}
-\author{\href{mailto:to.maxschmidt@pm.me}{Max Schmidt}, \href{mailto:f.sagerer@protonmail.com}{Florian Sagerer}}
+\title{Mini-\LaTeX-Doku}
+%\author{\href{mailto:to.maxschmidt@pm.me}{Max Schmidt}, \href{mailto:f.sagerer@protonmail.com}{Florian Sagerer}}
+\author{Max Schmidt \\ \href{mailto:to.maxschmidt@pm.me}{to.maxschmidt@pm.me}
+   \and Florian Sagerer \\ \href{mailto:f.sagerer@protonmail.com}{f.sagerer@protonmail.com} }
 
 \maketitle
 \thispagestyle{empty}
@@ -66,11 +68,50 @@
 \thispagestyle{empty}
 \newpage
 
-\section{\LaTeX\ Installation}
-Das ist kurz lästig, aber da müssen wir durch.
-\subsection{Im Browser}
-Geh auf \href{https://www.overleaf.com/}{Overleaf (overleaf.com)}, melde dich an, fertig.
-\subsection{Windows}
+{\setlength{\parindent}{0cm}
+\large{\textbf{Lass die nicht abschrecken! Lies gerne einfach nur das, was du willst/brauchst. Es werden Bezüge auf Abschnitte genommen, wo sie notwendig/sinnvoll sind.}}
+}
+
+\section{Über \LaTeX, dieses Dokument und die Installation}
+
+
+\LaTeX\ ist der de facto Standart für Wissenschaftliche Arbeit und jeder, der für sowas was anderes (wie zum Beispiel Word) benutzt, tut seinen potentiellen Lesern und vorallem sich selbst absolut keinen Gefallen. \\
+Der Anfang ist nicht so einfach, aber ist einmal das Dokument ge-set-up-t, dann ist alles viel einfacher. \\
+
+Dieses Dokument ist auch in \LaTeX\ geschrieben und auf \href{https://floriansagerer.de/mini-LATEX-doku/}{floriansagerer.de/mini-LATEX-doku} abrufbar. 
+Der Quelltext ist auf \href{https://github.com/QrxLP/mini-LATEX-doku}{GitHub} abrufbar.
+
+
+\subsection{Aber ich schreib meine Arbeit gerne in Word!}
+
+Folgendes geht in \LaTeX\ quasi von selbst oder sehr einfach und in Word nur mit sehr, sehr viel Arbeit oder gar nicht:
+\begin{itemize}
+    \item Überschriften werden immer richtig nummeriert (stell dir vor du musst alles ändern, wenn du nur eine Überschrift einfügst)
+    \item Automatische Seitennummerierung (auch wenn sie erst auf Seite 2 oder so starten soll)
+    \item Automatisches Inhaltsverzeichnis mit richtiger Nummerrierung und Seitenzahl
+    \item Referenzen auf Sektionen/Subsektionen/Abbildungen/... aktualisieren sich von selbst
+    \item Abbildungen einfügen ohne dass Word den gesamten Text über drei Seiten durcheinander schiebt, dein Haus abfackelt, dein Hund kidnapt und dein Auto mit einer Kartoffel zerkratzt
+    \item ein gut aussehendes Quellenverzeichnis
+    \item ein gutes, simples Titelblatt
+    \item sehr viel mehr
+\end{itemize}
+
+\subsection{Ok, ich nehm's ja schon her...} \label{hernehmen}
+
+Ok, super! 
+Zum mal Ausprobieren ist \href{https://www.overleaf.com/}{Overleaf (overleaf.com)} gut.
+Einfach dort anmelden und anfangen.
+Es gibt dort auch \href{https://www.overleaf.com/latex/templates}{Vorlagen (overleaf.com/latex/templates)}, die man einfach öffnen und sofort benutzen kann. \\
+
+Nachteil davon ist, dass du es nur mit Internetverbindung benutzen kannst.
+Aber keine Sorge du kannst jeder Zeit hin und herwechseln.
+
+\subsection{Installation} \label{Installation}
+
+Hier installieren wir \LaTeX\ auf unserem PC. 
+Das ist kurz lästig, aber da müssen wir durch. Alternative siehe \autoref{hernehmen}.
+
+\subsubsection{Windows}
 Für Windoofs: Die drei Sachen herunterladen und installieren: 
 \begin{itemize}
     \item \href{https://code.visualstudio.com/}{Visual Studio Code (code.visualstudio.com)}
@@ -79,16 +120,30 @@ Für Windoofs: Die drei Sachen herunterladen und installieren:
 \end{itemize}
 In VS-Code die Extension \href{https://open-vsx.org/extension/James-Yu/latex-workshop}{LaTeX Workshop} installieren. MikTex Console öffnen (wenn es nicht geht dann schließen und wieder öffen).
 In der MikTex Console unter Updates Check for Updates und dann Update now. Fertig. 
-\subsection{Linux}
+\subsubsection{Linux}
 \begin{itemize}
     \item \href{https://code.visualstudio.com/}{Visual Studio Code (code.visualstudio.com)}
-    \item \href{https://tug.org/texlive}{TeX Live (tug.org/texlive/) - gibt es auf den meisten Distributionen}
+    \item \href{https://tug.org/texlive}{TeX Live (tug.org/texlive) - gibt es auf den meisten Distributionen}
+    \item \href{https://open-vsx.org/extension/James-Yu/latex-workshop}{LaTeX Workshop VSCode Extension}
 \end{itemize}
 
-\subsection{MacOS}
+\subsubsection{MacOS}
 Keine Ahnung, finds selbst heraus.
+(Vielleicht hilft dir ja \href{https://tex.stackexchange.com/questions/220/i-want-to-start-using-latex-on-mac-os-x-where-do-i-start}{das}.)
 
-\sectionwithsubtitle{Los geht's!}{Ein Dokument erstellen}
+\subsection{Von Overleaf wechseln}
+
+\begin{enumerate}
+    \item Installation wie in \autoref{Installation}
+    \item Beim offenen Dokument in Overleaf links oben auf \textit{Menu}
+    \item Ganz oben unter \textit{Download} auf \textit{Source}
+    \item Diese Zip-Datei herunterladen und entpacken 
+    \item Das ist dann der Ordner, der in \autoref{Ein Dokument erstellen} erwähnt wird.
+\end{enumerate}
+
+
+
+\sectionwithsubtitle{Los geht's!}{Ein Dokument erstellen} 
     Um ein Dokument zu erstellen einfach einen neuen Ordner erstellen und dann in VS Code
     eine neue Datei mit der Endung .tex erstellen.
     Folgender Code ist eigentlich immer ein guter Start:
@@ -107,6 +162,9 @@ Keine Ahnung, finds selbst heraus.
 
     Tipp: Man kann in VS-Code Fenster per Drag-and-Drop nebeneinander schieben. 
     Dann kannst du links tippen und rechts gucken.
+
+
+
         
 \sectionwithsubtitle{Worum geht's?}{Titelseite und Inhaltsverzeichnis}
     Damit \LaTeX weiß was auf der Titelseite Stehen soll muss das zuerst definiert werden: Es kann alles in die Klammern geschrieben werden.
