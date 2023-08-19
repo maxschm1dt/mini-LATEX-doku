@@ -6,6 +6,8 @@
 \usepackage{float}
 \usepackage{enumitem}
 \usepackage{array}
+\usepackage[normalem]{ulem} %fuer durchstreichen
+
 
 \usepackage{listings}
 \usepackage{xcolor}
@@ -55,6 +57,17 @@
 }
 \lstset{style=mystyle}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%
+%%% BEGINN DES DOKUMENTS
+%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
 \begin{document}
 \title{Mini-\LaTeX-Doku}
 %\author{\href{mailto:to.maxschmidt@pm.me}{Max Schmidt}, \href{mailto:f.sagerer@protonmail.com}{Florian Sagerer}}
@@ -72,6 +85,10 @@
 \large{\textbf{Lass dich nicht abschrecken! Lies gerne einfach nur das, was du willst/brauchst. Es werden Bezüge auf Abschnitte genommen, wo es notwendig/sinnvoll sind.}}
 }
 
+
+
+% --------- KAPITEL ------------------
+
 \section{Wozu \LaTeX? und Installation}
 
 
@@ -79,7 +96,10 @@
 Der Anfang ist nicht so einfach, aber ist einmal das Dokument ge-set-up-t, dann ist alles viel einfacher. \\
 
 Dieses Dokument ist auch in \LaTeX\ geschrieben und auf \href{https://floriansagerer.de/mini-LATEX-doku/}{floriansagerer.de/mini-LATEX-doku} abrufbar. 
-Der Quelltext ist auf \href{https://github.com/QrxLP/mini-LATEX-doku}{GitHub} abrufbar.
+Der Quelltext ist auf \href{https://github.com/QrxLP/mini-LATEX-doku}{GitHub} abrufbar.\\
+
+Dieses Dokument soll einen einfachen Einstieg und eine kurze Übersicht geben.
+Eine ausführlichere Dokumentation gibt es auf \href{https://www.overleaf.com/learn}{Overleaf (overleaf.com/learn)}. Ansonsten wird man eigentlich immer fündig, wenn man in einer Suchmaschine \textit{»latex wie mach ich das und das«} eingibt.
 
 
 \subsection{Aber ich schreib meine Arbeit gerne in Word!}
@@ -112,8 +132,8 @@ Hier installieren wir \LaTeX\ auf unserem PC.
 Das ist kurz lästig, aber da müssen wir durch. Alternative siehe \autoref{hernehmen}.
 
 \subsubsection{Windows}
-Falls diese Anleitung nicht hilft, ist hier noch ein \href{https://www.youtube.com/watch?v=NnqxgMVeMiw}{Youtube Tutorial (youtube.com/watch?v=NnqxgMVeMiw)}.\\
 
+\textbf{Falls diese Anleitung nicht hilft, habe ich ein \href{https://www.youtube.com/watch?v=NnqxgMVeMiw}{Youtube Tutorial (youtube.com/watch?v=NnqxgMVeMiw)} erstellt.}\\
 
 Für Windoofs: Die drei Sachen herunterladen und installieren: 
 \begin{itemize}
@@ -121,8 +141,8 @@ Für Windoofs: Die drei Sachen herunterladen und installieren:
     \item \href{https://miktex.org/download}{MiKTeX (miktex.org/download)}
     \item \href{https://strawberryperl.com/}{Strawberry Perl (strawberryperl.com)}
 \end{itemize}
-In VS-Code die Extension \href{https://open-vsx.org/extension/James-Yu/latex-workshop}{LaTeX Workshop} installieren. MikTex Console öffnen (wenn es nicht geht dann schließen und wieder öffen).
-In der MikTex Console unter Updates Check for Updates und dann Update now. Fertig. 
+In VS-Code die Extension \href{https://open-vsx.org/extension/James-Yu/latex-workshop}{LaTeX Workshop} installieren. MikTex Console öffnen (wenn es nicht geht, dann im Icon Tray rechts in der Taskbar schließen und wieder öffen).
+In der MikTex Console unter \textit{Updates} → \textit{Check for Updates} und dann \textit{Update now}. Fertig. 
 \subsubsection{Linux}
 \begin{itemize}
     \item \href{https://code.visualstudio.com/}{Visual Studio Code (code.visualstudio.com)}
@@ -146,12 +166,15 @@ Keine Ahnung, finds selbst heraus.
 
 
 
+% --------- KAPITEL ------------------
+
 \sectionwithsubtitle{Los geht's!}{Ein Dokument erstellen} 
     Um ein Dokument zu erstellen einfach einen neuen Ordner erstellen und dann in VS Code
-    eine neue Datei mit der Endung .tex erstellen.
+    eine neue Datei mit der Endung \verb|.tex| erstellen.
     Folgender Code ist eigentlich immer ein guter Start:
     \begin{lstlisting}
-    \documentclass{article}
+    % mit % kann man ueberall Kommentare hinzufuegen, die nicht im PDF auftauchen
+    \documentclass{article} 
     \usepackage[ngerman]{babel} %damit von LaTeX erstellte Texte auf Deutsch sind
     \usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry} %Seitenraender
     \usepackage[onehalfspacing]{setspace} %Zeilenabstaende
@@ -160,21 +183,24 @@ Keine Ahnung, finds selbst heraus.
     Hier koennte Ihre Werbung stehen!
     \end{document}
     \end{lstlisting}
-    Mit dem grünen Pfeil oben rechts in VS Code kann das Dokument das erste mal compiled werden.
-    Ab dann wird nach dem Speichern (Strg + S) automatisch immer wieder compiled und die PDF neu erstellt.\\
+    Mit dem \textbf{grünen Pfeil} oben rechts in VS Code kann das Dokument das erste Mal \textbf{kompiliert} (d.h. das PDF erstellt) werden.
+    Ab dann kann immer mit \verb|Strg + S| gespeichert und kompiliert werden.
+    
 
-    Tipp: Man kann in VS-Code Fenster per Drag-and-Drop nebeneinander schieben. 
+    \textbf{Tipp:} Man kann in VS-Code Fenster per Drag-and-Drop nebeneinander schieben. 
     Dann kannst du links tippen und rechts gucken.
 
 
 
+% --------- KAPITEL ------------------
+
         
 \sectionwithsubtitle{Worum geht's?}{Titelseite und Inhaltsverzeichnis}
-    Damit \LaTeX weiß was auf der Titelseite Stehen soll muss das zuerst definiert werden: Es kann alles in die Klammern geschrieben werden.
+    Damit \LaTeX\ weiß, was auf der Titelseite Stehen soll, muss das zuerst definiert werden: Es kann alles in die Klammern geschrieben werden.
     \begin{lstlisting}
     \title{Titel des Dokuments}
     \author{Max Schmidt}
-    \date{Juli 23}
+    \date{Juli 23} % weglassen um automatisch das heutige Datum zuverwenden
     \end{lstlisting}
     Um die Titelseite dann zu erstellen:
     \begin{lstlisting}
@@ -190,58 +216,72 @@ Keine Ahnung, finds selbst heraus.
         \end{lstlisting}
 
 
+
+% --------- KAPITEL ------------------
+
+
 \sectionwithsubtitle{Fett, klein, schief,...}{Text Formatierung}
-\LaTeX\ ist kein \glqq What you see is what you get\grqq also Hilft es dir nix im Code Zeilenumbrüche zu machen.
 
 \begin{figure}[H]
     \centering
     \begin{tabular}{l|l}
         \textbf{Formatierung} & \textbf{Beispielcode} \\
         \midrule
-        Fett & \lstinline|\textbf{Fetter Text}| \\
-        Kursiv & \lstinline|\textit{Kursiver Text}| \\
-        Unterstrichen & \lstinline|\underline{Unterstrichener Text}| \\
-        Durchgestrichen & \lstinline|\sout{Durchgestrichener Text}| \\
-        Schriftgröße & \lstinline|\tiny, \scriptsize, \footnotesize,| \\
+        \textbf{Fett} & \lstinline|\textbf{Fetter Text}| \\
+        \textit{Kursiv} & \lstinline|\textit{Kursiver Text}| \\
+        \underline{Unterstrichen} & \lstinline|\underline{Unterstrichener Text}| \\
+        \sout{Durchgestrichen} & \lstinline|\sout{Durchgestrichener Text}| \\
+        \tiny S \scriptsize c \footnotesize h \small r \normalsize i \large f \Large t \huge größ \Huge e & \lstinline|\tiny, \scriptsize, \footnotesize,| \\
         & \lstinline|\small, \normalsize, \large,| \\
         & \lstinline|\Large, \huge, \Huge| \\
-        Schriftart & \lstinline|\textsf{Serifenlose Schrift}| \\
+        \textsf{Schrift}\texttt{art} & \lstinline|\textsf{Serifenlose Schrift}| \\
         & \lstinline|\texttt{Monospaced Schrift}| \\
-        Schriftfarbe & \lstinline|\textcolor{Farbe}{Text}| \\
-        Hoch- / Tiefstellung & \lstinline|\textsuperscript{Hochgestellter Text}| \\
+        Schrift\textcolor{red}{f}\textcolor{orange}{a}\textcolor{yellow}{r}\textcolor{green}{b}\textcolor{blue}{e} & \lstinline|\textcolor{Farbe}{Text}| \\
+        \textsuperscript{Hoch-} / \textsubscript{Tief}stellung & \lstinline|\textsuperscript{Hochgestellter Text}| \\
         & \lstinline|\textsubscript{Tiefgestellter Text}| \\
-        Zeilenumbruch & \lstinline|\\| oder \lstinline|\newline| \\
+        Zeilen- \\ umbruch & \lstinline|\\| oder \lstinline|\newline| \\
         \end{tabular}
     \centering
     
     
 \end{figure}
-Sollte nach einem Zeilenumbruch ein komischer Einzug entstehen kann man dem mit \lstinline|\noindent| entgehen.
+\LaTeX\ ist kein \glqq What you see is what you get\grqq\ also hilft es dir nix im Code Zeilenumbrüche zu machen. 
+
+← So eine Einrückung nach einem Zeilenumbruch kann mit \lstinline|\noindent| entfernt werden.
+
+
+
+
+% --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Recht und Ordnung!}{Sections}
-Sections sind die einzelen Kapitel des Dokuments, sie werden automatisch numerieriert.
+\textbf{Sections} sind die einzelen Kapitel des Dokuments, sie werden automatisch numerieriert und im Inhaltsverzeichnis aufgeführt.
 Ein neues Kapitel erstellt man so:
 \begin{lstlisting}
     \section{Name des Kapitels}
 \end{lstlisting}
-Will man ein Unterkapitel erstellen schreibt man ein sub davor, das kann man beliebig
-oft machen:
+Will man ein \textbf{Unterkapitel} erstellen, schreibt man ein \verb|sub| davor. Das kann man beliebig oft machen:
 \begin{lstlisting}
     \section{Kapitel}
         \subsection{Unterkapitel}
             \subsubsection{Unterunterkapitel}
         \subsection{Zweites Unterkapitel von Kapitel}
 \end{lstlisting}
-Wenn man eine Kapitel erstellen will, dass nicht im Inhaltsverzeichnis zu sehen sein soll und auch nicht
-in der Nummerrierung beachten wird, kann man das mit einem sternchen nach dem keyword machen:
+Ein (Unter-)Kapitel mit \textbf{Sternchen} wird nicht vom Inhaltsverzeichnis und der Nummerierung beachtet:
 \begin{lstlisting}
     \subsection*{Geheim}
 \end{lstlisting}
-Das Inhaltsverzeichnis wird automatisch aktualisiert.
+
+
+
+
+% --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Eins nach dem Anderen.}{Tabellen, Listen}
+
 \subsection{Listen}
-Sehr gut und ausführlich \href{https://www.overleaf.com/learn/latex/Lists}{Overleaf Doku zu Listen (overleaf.com/learn/latex/Lists)}
+
+Auch sehr gut und ausführlich \href{https://www.overleaf.com/learn/latex/Lists}{Overleaf Doku zu Listen (overleaf.com/learn/latex/Lists)}.
 \subsubsection{Bulletlist}
 So macht man eine einfache Liste aus Bulltepoints:
 \begin{lstlisting}
@@ -340,6 +380,7 @@ So sieht die dann aus:
 \end{tabular}
 
 
+% --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Was zum Anschauen!}{Abbildungen}
 \sectionwithsubtitle{Rechnen.}{Mathematische Formeln}
