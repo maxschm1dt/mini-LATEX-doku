@@ -36,26 +36,45 @@
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
     commentstyle=\color{codegreen},
     keywordstyle=\color{magenta},
-    numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
     basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,         
     breaklines=true,                 
     captionpos=b,                    
     keepspaces=true,                 
-    numbers=left,                    
     numbersep=5pt,                  
     showspaces=false,                
     showstringspaces=false,
     showtabs=false,                  
     tabsize=2,
-    language=[LaTeX]{TeX}
+    language=[LaTeX]{TeX},
+    numberstyle=\tiny
 }
-\lstset{style=mystyle}
+
+%% gern noch etwas rumspielen bissl richtig schick ausschaut
+\lstdefinestyle{mystyle2}{
+    language={[LaTeX]TeX},
+    frame=single,
+    framesep=\fboxsep,
+    framerule=\fboxrule,
+    rulecolor=\color{blue},
+    xleftmargin=\dimexpr\fboxsep+\fboxrule\relax,
+    xrightmargin=\dimexpr\fboxsep+\fboxrule\relax,
+    breaklines=true,
+    basicstyle=\small\tt,
+    keywordstyle=\color{blue},
+    commentstyle=\color[rgb]{0.13,0.54,0.13},
+    %backgroundcolor=\color{yellow!10},
+    tabsize=2,
+    columns=flexible,
+    morekeywords={maketitle},
+}
+\lstset{style=mystyle2}
 
 
 
@@ -88,6 +107,7 @@
 
 
 % --------- KAPITEL ------------------
+
 
 \section{Wozu \LaTeX? und Installation}
 
