@@ -383,26 +383,49 @@ So sieht die dann aus:
 % --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Was zum Anschauen!}{Abbildungen}
+
+
+
+% --------- KAPITEL ------------------
+
 \sectionwithsubtitle{Rechnen.}{Mathematische Formeln}
-Um in \LaTeX eine Mathematische Formel zu schreiben muss man dem Kompiler zuerst mitteilen, dass es jetzt Mathematisch wird:
+Um in \LaTeX\ eine mathematische Formel zu schreiben, muss man dem Kompilierer zuerst mitteilen, dass es jetzt mathematisch wird:
 \begin{itemize}
-    \item Man kann die Formal entweder inline: \lstinline|$ 2 + 2 = 3 $|
-    \item oder als eigenen Absatz formatieren lassen: \lstinline|$$ a \in A $$|
+    \item Man kann die Formal entweder \textbf{inline}: \lstinline|$ 2 + 2 = 3 $|
+    \item oder als \textbf{eigenen Absatz} formatieren lassen: \lstinline|$$ a \in A $$|
 \end{itemize}
-Inline sieht eine Formel dann so aus: $ 2 + 2 = 3 $ und als eigener Absatz: $$ a \in A$$
+Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \in A$$ so.
+
+
 \subsection{Grundlagen}
 \begin{figure}[H]
     \centering
-\begin{tabular}{c | c | c}
+\begin{tabular}{l | c | l}
     Name & Aussehen & Code \\
     \hline
-    Addition & 1 + 3 & \lstinline|$ 1 + 3 $| \\
-    Subtraktion & 1 - 3 & \lstinline|$ 1 - 3$| \\
-    Multiplikation & & \
+    Addition & $1 + 3$ & \lstinline|$ 1 + 3 $| \\
+    Subtraktion & $1 - 3$ & \lstinline|$ 1 - 3 $| \\
+    Multiplikation & $1 * 3$ & \lstinline|$ 1 * 3 $| \\
+     & $1 \cdot 3$ & \lstinline|$ 1 \cdot 3 $| \\
+     & $1 \times 3$ & \lstinline|$ 1 \times 3 $| \\
+    Division & $1 / 3$ & \lstinline|$ 1 / 3 $| \\
+     & $^1/_3$ & \lstinline|$ ^1/_3 $| \\
+     & $1 \colon 3$ & \lstinline|$ 1 \colon 3 $| \\
+     & $1 \div 3$ & \lstinline|$ 1 \div 3 $| \\
+     & $\frac{1}{3}$ & \lstinline|$ \frac{1}{3} $| \\
+    Plus-Minus & $ \pm 3$ & \lstinline|$ \pm 3 $| \\
+    Minus-Plus & $ \mp 3$ & \lstinline|$ \mp 3 $| \\
+    Index & $ x_{i} $ & \lstinline|$ x_{i} $| \\
+    Exponent & $ x^{2} $ & \lstinline|$ x^{2} $| \\
+    Wurzel & $ \sqrt{x} $ & \lstinline|$ \sqrt{x} $| \\
+     & $ \sqrt[3]{x} $ & \lstinline|$ \sqrt[3]{x} $| \\
+    Summe & $ \sum_{i=1}^{n} x_i $ & \lstinline|$ \sum_{i=1}^{n} x_i $| \\
+     & $ \displaystyle\sum_{i=1}^{n} x_i $ & \lstinline|$ \displaystyle\sum_{i=1}^{n} x_i $| \\
 
 \end{tabular}
 \end{figure}
 
+Siehe außerdem hier \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{hier (en.wikibooks.org/wiki/LaTeX/Mathematics)}.
 
 
 
