@@ -269,7 +269,7 @@ Will man ein \textbf{Unterkapitel} erstellen, schreibt man ein \verb|sub| davor.
 \end{lstlisting}
 Ein (Unter-)Kapitel mit \textbf{Sternchen} wird nicht vom Inhaltsverzeichnis und der Nummerierung beachtet:
 \begin{lstlisting}
-    \subsection*{Geheim}
+    \subsection*{Geheim} 
 \end{lstlisting}
 
 
@@ -384,6 +384,28 @@ So sieht die dann aus:
 
 \sectionwithsubtitle{Was zum Anschauen!}{Abbildungen}
 \sectionwithsubtitle{Rechnen.}{Mathematische Formeln}
+Um in \LaTeX eine Mathematische Formel zu schreiben muss man dem Kompiler zuerst mitteilen, dass es jetzt Mathematisch wird:
+\begin{itemize}
+    \item Man kann die Formal entweder inline: \lstinline|$ 2 + 2 = 3 $|
+    \item oder als eigenen Absatz formatieren lassen: \lstinline|$$ a \in A $$|
+\end{itemize}
+Inline sieht eine Formel dann so aus: $ 2 + 2 = 3 $ und als eigener Absatz: $$ a \in A$$
+\subsection{Grundlagen}
+\begin{figure}[H]
+    \centering
+\begin{tabular}{c | c | c}
+    Name & Aussehen & Code \\
+    \hline
+    Addition & 1 + 3 & \lstinline|$ 1 + 3 $| \\
+    Subtraktion & 1 - 3 & \lstinline|$ 1 - 3$| \\
+    Multiplikation & & \
+
+\end{tabular}
+\end{figure}
+
+
+
+
 \sectionwithsubtitle{Programmieren.}{Code Snippets}
 \sectionwithsubtitle{Wunderschöner \LaTeX-Zauber}{Formatierungsbeispiele}
 
