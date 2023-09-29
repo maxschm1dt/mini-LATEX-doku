@@ -119,7 +119,7 @@ Dieses Dokument ist auch in \LaTeX\ geschrieben und auf \href{https://floriansag
 Der Quelltext ist auf \href{https://github.com/QrxLP/mini-LATEX-doku}{GitHub} abrufbar.\\
 
 Dieses Dokument soll einen einfachen Einstieg und eine kurze Übersicht geben.
-Eine ausführlichere Dokumentation gibt es auf \href{https://www.overleaf.com/learn}{Overleaf (overleaf.com/learn)}. Ansonsten wird man eigentlich immer fündig, wenn man in einer Suchmaschine \textit{»latex wie mach ich das und das«} eingibt.
+Eine ausführlichere Dokumentation gibt es auf \href{https://www.overleaf.com/learn}{Overleaf (overleaf.com/learn)} und \href{https://en.wikibooks.org/wiki/LaTeX}{Wikibooks (en.wikibooks.org/wiki/LaTeX)}. Ansonsten wird man eigentlich immer fündig, wenn man in einer Suchmaschine \textit{»latex wie mach ich das und das«} eingibt.
 
 
 \subsection{Aber ich schreib meine Arbeit gerne in Word!}
@@ -301,7 +301,8 @@ Ein (Unter-)Kapitel mit \textbf{Sternchen} wird nicht vom Inhaltsverzeichnis und
 
 \subsection{Listen}
 
-Auch sehr gut und ausführlich \href{https://www.overleaf.com/learn/latex/Lists}{Overleaf Doku zu Listen (overleaf.com/learn/latex/Lists)}.
+Siehe auch: \href{https://www.overleaf.com/learn/latex/Lists}{Overleaf Dokumentation zu Listen (overleaf.com/learn/latex/Lists)}.
+
 \subsubsection{Bulletlist}
 So macht man eine einfache Liste aus Bulltepoints:
 \begin{lstlisting}
@@ -409,6 +410,11 @@ So sieht die dann aus:
 % --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Rechnen.}{Mathematische Formeln}
+
+Siehe auch: \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{Wikibooks \LaTeX\ Guide (en.wikibooks.org/wiki/LaTeX/Mathematics)}. \\
+
+
+
 Um in \LaTeX\ eine mathematische Formel zu schreiben, muss man dem Kompilierer zuerst mitteilen, dass es jetzt mathematisch wird:
 \begin{itemize}
     \item Man kann die Formal entweder \textbf{inline}: \lstinline|$ 2 + 2 = 3 $|
@@ -446,7 +452,6 @@ Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \
 \end{tabular}
 \end{figure}
 
-Siehe außerdem hier \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{hier (en.wikibooks.org/wiki/LaTeX/Mathematics)}.
 
 \subsection{Megen und Logische Formeln}
 
@@ -463,7 +468,90 @@ Siehe außerdem hier \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{hier
     \end{tabular}
 \end{figure}
 
+
+
+
+% --------- KAPITEL ------------------
+
+
 \sectionwithsubtitle{Programmieren.}{Code Snippets}
+
+Siehe auch: 
+\href{https://www.overleaf.com/learn/latex/Code_listing}{Overleaf Dokumentation zu Code listing (overleaf.com/learn/latex/Code\_listing)}
+
+\subsection[verbatim]{Verbatim}
+
+Eine Möglichkeit, \textbf{Code Snippets} in einem \LaTeX\ Dokument einzubauen, ist \textit{verbatim}:
+
+\begin{lstlisting}
+    \begin{verbatim}
+        #include <stdio.h>
+
+        int main() {
+            puts("Hallo Welt!");
+            return 0;
+        }
+    \end{verbatim}
+\end{lstlisting}
+
+\subsection[listings]{Listings}
+
+Eine andere Möglichkeit, die mehr optische Anpassung bietet, ist \textit{listings}. 
+Dazu muss folgendes in den Kopf des Dokuments:
+
+\begin{lstlisting}
+    \usepackage{listings}
+\end{lstlisting}
+
+Das Code Snippet kann folgendermaßen eingebunden werden:
+
+\lstnewenvironment{TeXlstlisting}{\lstset{language=[LaTeX]TeX}}{}
+\begin{TeXlstlisting}
+    \begin{lstlisting}
+        #include <stdio.h>
+
+        int main() {
+            puts("Hallo Welt!");
+            return 0;
+        }
+    \end{lstlisting}
+\end{TeXlstlisting}
+
+\newpage
+Die optische Anpassung kann beispielsweise so aussehen:
+\begin{lstlisting}
+    \documentclass{article}
+    \usepackage{listings}
+    \usepackage{xcolor}
+
+    \definecolor{codegreen}{rgb}{0,0.6,0}
+    \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+    \definecolor{codepurple}{rgb}{0.58,0,0.82}
+    \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+    \lstdefinestyle{mystyle}{
+        backgroundcolor=\color{backcolour},   
+        commentstyle=\color{codegreen},
+        keywordstyle=\color{magenta},
+        numberstyle=\tiny\color{codegray},
+        stringstyle=\color{codepurple},
+        basicstyle=\ttfamily\footnotesize,
+        breakatwhitespace=false,         
+        breaklines=true,                 
+        captionpos=b,                    
+        keepspaces=true,                 
+        numbers=left,                    
+        numbersep=5pt,                  
+        showspaces=false,                
+        showstringspaces=false,
+        showtabs=false,                  
+        tabsize=2
+    }
+
+    \lstset{style=mystyle}
+\end{lstlisting}
+
+
 \sectionwithsubtitle{Wunderschöner \LaTeX-Zauber}{Formatierungsbeispiele}
 
 
