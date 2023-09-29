@@ -414,7 +414,7 @@ Um in \LaTeX\ eine mathematische Formel zu schreiben, muss man dem Kompilierer z
     \item Man kann die Formal entweder \textbf{inline}: \lstinline|$ 2 + 2 = 3 $|
     \item oder als \textbf{eigenen Absatz} formatieren lassen: \lstinline|$$ a \in A $$|
 \end{itemize}
-Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \in A$$ so.
+Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \in A$$ so aus.
 
 
 \subsection{Grundlagen}
@@ -441,13 +441,27 @@ Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \
      & $ \sqrt[3]{x} $ & \lstinline|$ \sqrt[3]{x} $| \\
     Summe & $ \sum_{i=1}^{n} x_i $ & \lstinline|$ \sum_{i=1}^{n} x_i $| \\
      & $ \displaystyle\sum_{i=1}^{n} x_i $ & \lstinline|$ \displaystyle\sum_{i=1}^{n} x_i $| \\
+    Vergleiche & $ < \leq \geq > $ & \lstinline|$ < \leq \geq > $|
 
 \end{tabular}
 \end{figure}
 
 Siehe außerdem hier \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{hier (en.wikibooks.org/wiki/LaTeX/Mathematics)}.
 
+\subsection{Megen und Logische Formeln}
 
+\begin{figure}[H]
+    \centering
+    \begin{tabular}{c | c}
+        Aussehen & Code \\
+        \hline
+        $ \in $ bzw. $ \ni $ & \lstinline|$ \in $ bzw $ \ni $| \\
+        $ \notin $ & \lstinline|$ \notin $| \\
+        $ \subseteq $ bzw.$ \supseteq $ & \lstinline|$ \subseteq $ bzw.$ \supseteq $| \\
+        $ \setminus $ & \lstinline|$ \setminus $| \\
+
+    \end{tabular}
+\end{figure}
 
 \sectionwithsubtitle{Programmieren.}{Code Snippets}
 \sectionwithsubtitle{Wunderschöner \LaTeX-Zauber}{Formatierungsbeispiele}
