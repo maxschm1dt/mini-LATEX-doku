@@ -19,7 +19,8 @@
     citecolor=blue,
     filecolor=blue,
     linkcolor=black,
-    urlcolor=blue
+    urlcolor=blue,
+    pdftitle={Mini-LaTeX-Doku}
 }
 
 %section with subtitle
@@ -275,25 +276,90 @@ Keine Ahnung, finds selbst heraus.
 % --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Recht und Ordnung!}{Sections}
-\textbf{Sections} sind die einzelen Kapitel des Dokuments, sie werden automatisch numerieriert und im Inhaltsverzeichnis aufgeführt.
-Ein neues Kapitel erstellt man so:
+
+\textbf{Sections} sind die einzelen Abschnitte des Dokuments, sie werden automatisch numerieriert und im Inhaltsverzeichnis aufgeführt.
+Einen neuen Abschnitt erstellt man so:
 \begin{lstlisting}
-    \section{Name des Kapitels}
+    \section{Name des Abschnitts}\label{kurzer-name}
 \end{lstlisting}
-Will man ein \textbf{Unterkapitel} erstellen, schreibt man ein \verb|sub| davor. Das kann man beliebig oft machen:
+Das Label ist da, um den jeweiligen Abschnitt an anderer Stelle zu referenzieren (siehe \autoref{hyperref} und \autoref{autoref}).
+
+Will man einen \textbf{Unterabschnitt} erstellen, schreibt man ein \verb|sub| davor. Das kann man beliebig oft machen:
 \begin{lstlisting}
-    \section{Kapitel}
-        \subsection{Unterkapitel}
-            \subsubsection{Unterunterkapitel}
-        \subsection{Zweites Unterkapitel von Kapitel}
+    \section{Abschnitt}\label{Abschnitt}
+        \subsection{Unterabschnitt}\label{Unterabschnitt}
+            \subsubsection{Unterunterabschnitt}\label{Unterunterabschnitt}
+        \subsection{Zweites Unterabschnitt von Abschnitt}\label{zweites-Unterabschnitt}
 \end{lstlisting}
-Ein (Unter-)Kapitel mit \textbf{Sternchen} wird nicht vom Inhaltsverzeichnis und der Nummerierung beachtet:
+
+Ein (Unter-)Abschnitt mit \textbf{Sternchen} wird nicht vom Inhaltsverzeichnis und der Nummerierung beachtet:
 \begin{lstlisting}
     \subsection*{Geheim} 
 \end{lstlisting}
 
+% --------- KAPITEL ------------------
 
+\sectionwithsubtitle{Da, wo der Daumen rechts ist}{Links}
 
+Damit wir Links benutzen können und auch die Abschnitte im \hyperref[Titelseite und Inhaltsverzeichnis]{Inhaltsverzeichnis} anklickbar sind, brauchen wir das Package \textit{hyperref}:
+
+\begin{lstlisting}
+    \usepackage{hyperref}
+\end{lstlisting}
+
+Wir können das Aussehen von Links anpassen:
+
+\begin{lstlisting}
+    \hypersetup{
+        colorlinks=true,
+        linkcolor=blue,
+        filecolor=magenta,      
+        urlcolor=cyan,
+        pdftitle={Mini-LaTeX-Doku}
+    }
+
+    \urlstyle{same}
+\end{lstlisting}
+
+\subsection[weblink]{Website verlinken}
+
+\textbf{Code:}
+
+\begin{lstlisting}
+    Die Dokumentation ist auf \href{https://floriansagerer.de/}{meiner Website} aufrufbar.
+\end{lstlisting}
+
+\noindent\textbf{Aussehen:}
+
+Die Dokumentation ist auf \href{https://floriansagerer.de/}{meiner Website} aufrufbar.
+
+\subsection{Hyper-Referenz}\label{hyperref}
+
+Der Abschnitt muss hierfür ein Label haben (siehe \autoref{Sections}).
+
+\noindent\textbf{Code:}
+
+\begin{lstlisting}
+    Abschnitte im \hyperref[Titelseite und Inhaltsverzeichnis]{Inhaltsverzeichnis}
+\end{lstlisting}
+
+\noindent\textbf{Aussehen:}
+
+Abschnitte im \hyperref[Titelseite und Inhaltsverzeichnis]{Inhaltsverzeichnis}
+
+\subsection{Nummer-Referenz}\label{autoref}
+
+Der Abschnitt muss hierfür ein Label haben (siehe \autoref{Sections}).
+
+\noindent\textbf{Code:}
+
+\begin{lstlisting}
+    Siehe auch \autoref{Ein Dokument erstellen}.
+\end{lstlisting}
+
+\noindent\textbf{Aussehen:} 
+
+Siehe auch \autoref{Ein Dokument erstellen}.
 
 % --------- KAPITEL ------------------
 
