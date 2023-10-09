@@ -1,27 +1,11 @@
 \documentclass{article}
-\usepackage[ngerman]{babel}
-\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2cm]{geometry}
-\usepackage[onehalfspacing]{setspace}
-\usepackage{booktabs}
-\usepackage{float}
-\usepackage{enumitem}
-\usepackage{array}
-\usepackage[normalem]{ulem} %fuer durchstreichen
+\input{settings/packages.tex}
+\input{settings/colors.tex}
+\input{settings/hypersetup.tex}
+\input{settings/listings.tex}
 
+\graphicspath{ {./images/} }
 
-\usepackage{listings}
-\usepackage{xcolor}
-
-% hyperlinks
-\usepackage{hyperref} 
-\hypersetup{
-    colorlinks,
-    citecolor=blue,
-    filecolor=blue,
-    linkcolor=black,
-    urlcolor=blue,
-    pdftitle={Mini-LaTeX-Doku}
-}
 
 %section with subtitle
 \newcommand{\sectionwithsubtitle}[2]{\section[\textit{#1} - #2]{\textit{#1} {\large #2}} \label{#2}}
@@ -30,52 +14,6 @@
 \setcounter{section}{-1}
 \setlist{nolistsep}
 
-
-
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-
-
-\lstdefinestyle{mystyle}{
-    backgroundcolor=\color{backcolour},   
-    commentstyle=\color{codegreen},
-    keywordstyle=\color{magenta},
-    stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize,
-    breakatwhitespace=false,         
-    breaklines=true,                 
-    captionpos=b,                    
-    keepspaces=true,                 
-    numbersep=5pt,                  
-    showspaces=false,                
-    showstringspaces=false,
-    showtabs=false,                  
-    tabsize=2,
-    language=[LaTeX]{TeX},
-    numberstyle=\tiny
-}
-
-%% gern noch etwas rumspielen bissl richtig schick ausschaut
-\lstdefinestyle{mystyle2}{
-    language={[LaTeX]TeX},
-    frame=single,
-    framesep=\fboxsep,
-    framerule=\fboxrule,
-    rulecolor=\color{blue},
-    xleftmargin=\dimexpr\fboxsep+\fboxrule\relax,
-    xrightmargin=\dimexpr\fboxsep+\fboxrule\relax,
-    breaklines=true,
-    basicstyle=\small\tt,
-    keywordstyle=\color{blue},
-    commentstyle=\color[rgb]{0.13,0.54,0.13},
-    %backgroundcolor=\color{yellow!10},
-    tabsize=2,
-    columns=flexible,
-    morekeywords={maketitle},
-}
-\lstset{style=mystyle2}
 
 
 
@@ -187,6 +125,11 @@ Keine Ahnung, finds selbst heraus.
 
 
 
+
+
+
+
+
 % --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Los geht's!}{Ein Dokument erstellen} 
@@ -210,6 +153,9 @@ Keine Ahnung, finds selbst heraus.
 
     \textbf{Tipp:} Man kann in VS-Code Fenster per Drag-and-Drop nebeneinander schieben. 
     Dann kannst du links tippen und rechts gucken.
+
+
+
 
 
 
@@ -297,6 +243,11 @@ Ein (Unter-)Abschnitt mit \textbf{Sternchen} wird nicht vom Inhaltsverzeichnis u
     \subsection*{Geheim} 
 \end{lstlisting}
 
+
+
+
+
+
 % --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Da, wo der Daumen rechts ist}{Links}
@@ -309,17 +260,8 @@ Damit wir Links benutzen können und auch die Abschnitte im \hyperref[Titelseite
 
 Wir können das Aussehen von Links anpassen:
 
-\begin{lstlisting}
-    \hypersetup{
-        colorlinks=true,
-        linkcolor=blue,
-        filecolor=magenta,      
-        urlcolor=cyan,
-        pdftitle={Mini-LaTeX-Doku}
-    }
+\lstinputlisting[firstline=2]{settings/hypersetup.tex}
 
-    \urlstyle{same}
-\end{lstlisting}
 
 \subsection[weblink]{Website verlinken}
 
@@ -361,11 +303,19 @@ Der Abschnitt muss hierfür ein Label haben (siehe \autoref{Sections}).
 
 Siehe auch \autoref{Ein Dokument erstellen}.
 
+
+
+
+
 % --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Soße?}{Quellenverzeichnis}
 
 Siehe \href{https://www.youtube.com/watch?v=hqaLeq9huqw}{dieses Video}.
+
+
+
+
 
 
 % --------- KAPITEL ------------------
@@ -474,9 +424,16 @@ So sieht die dann aus:
 \end{tabular}
 
 
+
+
+
+
 % --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Was zum Anschauen!}{Abbildungen}
+
+
+
 
 
 
@@ -592,38 +549,42 @@ Das Code Snippet kann folgendermaßen eingebunden werden:
 
 \newpage
 Die optische Anpassung kann beispielsweise so aussehen:
+
+\lstinputlisting[firstline=2]{settings/listings.tex}
+
+
+
+
+
+% --------- KAPITEL ------------------
+
+\sectionwithsubtitle{Ich mal mir die Welt, wie sie mir gefällt...}{Farben}
+
+Siehe auch 
+\href{https://www.overleaf.com/learn/latex/Using_colours_in_LaTeX}{Overleaf Dokumentation zu Farben (overleaf.com/learn/latex/Using\_colours\_in\_LaTeX)}.\\
+
+
+Dazu braucht man das Package:
+
 \begin{lstlisting}
-    \documentclass{article}
-    \usepackage{listings}
     \usepackage{xcolor}
-
-    \definecolor{codegreen}{rgb}{0,0.6,0}
-    \definecolor{codegray}{rgb}{0.5,0.5,0.5}
-    \definecolor{codepurple}{rgb}{0.58,0,0.82}
-    \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
-
-    \lstdefinestyle{mystyle}{
-        backgroundcolor=\color{backcolour},   
-        commentstyle=\color{codegreen},
-        keywordstyle=\color{magenta},
-        numberstyle=\tiny\color{codegray},
-        stringstyle=\color{codepurple},
-        basicstyle=\ttfamily\footnotesize,
-        breakatwhitespace=false,         
-        breaklines=true,                 
-        captionpos=b,                    
-        keepspaces=true,                 
-        numbers=left,                    
-        numbersep=5pt,                  
-        showspaces=false,                
-        showstringspaces=false,
-        showtabs=false,                  
-        tabsize=2
-    }
-
-    \lstset{style=mystyle}
 \end{lstlisting}
 
+Folgende Farben können dann benutzt werden:
+\begin{figure}[H]
+    \includegraphics[scale=0.5]{OLxcolorList.png}
+    \centering
+\end{figure}
+
+Andere Farben können so definiert werden:
+
+\lstinputlisting[firstline=2]{settings/colors.tex}
+
+
+
+
+
+% --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Wunderschöner \LaTeX-Zauber}{Formatierungsbeispiele}
 
