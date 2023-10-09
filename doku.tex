@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[titlepage]{article}
 \input{settings/packages.tex}
 \input{settings/colors.tex}
 \input{settings/hypersetup.tex}
@@ -16,7 +16,6 @@
 
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%
 %%% BEGINN DES DOKUMENTS
@@ -27,28 +26,35 @@
 
 
 \begin{document}
-\title{Mini-\LaTeX-Doku}
+\title{\Huge\textbf{Mini-\LaTeX-Doku}}
 %\author{\href{mailto:to.maxschmidt@pm.me}{Max Schmidt}, \href{mailto:f.sagerer@protonmail.com}{Florian Sagerer}}
-\author{Max Schmidt \\ \href{mailto:to.maxschmidt@pm.me}{to.maxschmidt@pm.me}
-   \and Florian Sagerer \\ \href{mailto:f.sagerer@protonmail.com}{f.sagerer@protonmail.com} }
+\author{\textbf{Max Schmidt} \\ \href{mailto:to.maxschmidt@pm.me}{to.maxschmidt@pm.me}
+   \and \textbf{Florian Sagerer} \\ \href{mailto:f.sagerer@protonmail.com}{f.sagerer@protonmail.com} }
+
 
 \maketitle
 \thispagestyle{empty}
 
-\tableofcontents
-\thispagestyle{empty}
 \newpage
+\thispagestyle{empty}
+\tableofcontents
 
+\newpage
+\begin{center}
 {\setlength{\parindent}{0cm}
-\large{\textbf{Lass dich nicht abschrecken! Lies gerne einfach nur das, was du willst/brauchst. Es werden Bezüge auf Abschnitte genommen, wo es notwendig/sinnvoll sind.}}
+\large{\textcolor{red}{\textbf{Lass dich nicht abschrecken! Lies gerne einfach nur das, was du willst/brauchst. Es werden Bezüge auf Abschnitte genommen, wo es notwendig/sinnvoll sind.}}}
 }
+\end{center}
 
 
 
 % --------- KAPITEL ------------------
 
 
+\setcounter{page}{3}
+
 \section{Wozu \LaTeX? und Installation}
+
 
 
 \LaTeX\ ist der de facto Standart für Wissenschaftliche Arbeit und jeder, der für sowas was anderes (wie zum Beispiel Word) benutzt, tut seinen potentiellen Lesern und vorallem sich selbst absolut keinen Gefallen. \\
