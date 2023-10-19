@@ -436,11 +436,40 @@ So sieht die dann aus:
 
 % --------- KAPITEL ------------------
 
-\sectionwithsubtitle{Was zum Anschauen!}{Abbildungen}
+\sectionwithsubtitle{Was zum Anschauen!}{Bilder}
 
+Für Bilder brauchen wir das Package \textit{graphicx} und einen Ordner:
 
+\begin{lstlisting}
+    \usepackage{graphicx}
+    \graphicspath{ {./images/} }
+\end{lstlisting}
 
+Ein Bild, das in unserem Ordner unter \textit{images/bild.png} gespeichert ist können wir so darstellen und skalieren:
 
+\begin{lstlisting}
+    \includegraphics[scale=1.5]{bild}
+\end{lstlisting}
+
+Wollen eine eher ordentlicher Darstellung mit Bildunterschrift, können wir eine \textit{figure} benutzen:
+
+\begin{lstlisting}
+    \begin{figure}
+        \includegraphics[scale=1.5]{bild}
+        \centering %zentriert die Darstellung mittig
+        \caption{Eine passende Bildunterschrift zu unserem Bild}
+    \end{figure}
+\end{lstlisting}
+
+Mit dem Package \textit{float} und der Option \textit{H} kann mann sicher stellen, dass die Darstellung genau an der Stelle im Dokument erscheint, in der sie auch im Code ist:
+
+\begin{lstlisting}
+    \usepackage{float}
+
+    \begin{figure}[H]
+        \includegraphics[scale=1.5]{bild}
+    \end{figure}
+\end{lstlisting}
 
 
 % --------- KAPITEL ------------------
