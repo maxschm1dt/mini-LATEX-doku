@@ -26,7 +26,7 @@
 
 
 \begin{document}
-\title{\Huge\textbf{Mini-\LaTeX-Doku}}
+\title{\Huge\textbf{Mini-\LaTeX-Doku}\Large \textit{(work in progress)}}
 %\author{\href{mailto:to.maxschmidt@pm.me}{Max Schmidt}, \href{mailto:f.sagerer@protonmail.com}{Florian Sagerer}}
 \author{\textbf{Max Schmidt} \\ \href{mailto:to.maxschmidt@pm.me}{to.maxschmidt@pm.me}
    \and \textbf{Florian Sagerer} \\ \href{mailto:f.sagerer@protonmail.com}{f.sagerer@protonmail.com} }
@@ -61,6 +61,7 @@
 Der Anfang ist nicht so einfach, aber ist einmal das Dokument ge-set-up-t, dann ist alles viel einfacher. \\
 
 Dieses Dokument ist auch in \LaTeX\ geschrieben und auf \href{https://floriansagerer.de/mini-LATEX-doku/}{floriansagerer.de/mini-LATEX-doku} abrufbar. 
+Es wird fortlaufend geändert.
 Der Quelltext ist auf \href{https://github.com/QrxLP/mini-LATEX-doku}{GitHub} abrufbar.\\
 
 Dieses Dokument soll einen einfachen Einstieg und eine kurze Übersicht geben.
@@ -322,11 +323,11 @@ Siehe auch \href{https://www.youtube.com/watch?v=hqaLeq9huqw}{dieses Video (yout
 Wir brauchen ein Quellendatei mit der Endung \textit{.bib}, zum Beispiel \textit{quellen.bib}, in der wir die Quellen im \textit{BibTeX}-Format abspeichern:
 
 \begin{lstlisting}
-    @book{zeleny1968wissenschaftslogik,
-        title={Die Wissenschaftslogik bei Marx und Das Kapital},
-        author={Zeleny, Jind{\v{r}}ich},
-        year={1968},
-        publisher={De Gruyter}
+    @book{marx1867kapital,
+        title={Das Kapital},
+        author={Marx, Karl},
+        year={1867},
+        publisher={Otto Meissner}
     }
 \end{lstlisting}
 
@@ -343,7 +344,7 @@ In unserem \LaTeX -Dokument schreiben wir:
 Um im Text zu zitieren, schreiben wir:
 
 \begin{lstlisting}
-    \cite[]{zeleny1968wissenschaftslogik} % in der eckigen Klammer koennen wir noch extra Informationen, wie Seitenzahl angeben
+    \cite[]{marx1867kapital} % in der eckigen Klammer koennen wir noch extra Informationen, wie Seitenzahl angeben
 \end{lstlisting}
 
 Um das Quellenverzeichnis anzugeben, schreiben wir:
