@@ -317,10 +317,40 @@ Siehe auch \autoref{Ein Dokument erstellen}.
 
 \sectionwithsubtitle{Soße?}{Quellenverzeichnis}
 
-Siehe \href{https://www.youtube.com/watch?v=hqaLeq9huqw}{dieses Video}.
+Siehe auch \href{https://www.youtube.com/watch?v=hqaLeq9huqw}{dieses Video (youtube.com/watch?v=hqaLeq9huqw)}.\\
+
+Wir brauchen ein Quellendatei mit der Endung \textit{.bib}, zum Beispiel \textit{quellen.bib}, in der wir die Quellen im \textit{BibTeX}-Format abspeichern:
+
+\begin{lstlisting}
+    @book{zeleny1968wissenschaftslogik,
+        title={Die Wissenschaftslogik bei Marx und Das Kapital},
+        author={Zeleny, Jind{\v{r}}ich},
+        year={1968},
+        publisher={De Gruyter}
+    }
+\end{lstlisting}
+
+Mit der Quellenbezeichnung in der ersten Zeile, zitieren wir später die Quelle.\\
 
 
+In unserem \LaTeX -Dokument schreiben wir:
 
+\begin{lstlisting}
+    \usepackage[]{biblatex}
+    \addbibresource{quellen.bib}
+\end{lstlisting}
+
+Um im Text zu zitieren, schreiben wir:
+
+\begin{lstlisting}
+    \cite[]{zeleny1968wissenschaftslogik} % in der eckigen Klammer koennen wir noch extra Informationen, wie Seitenzahl angeben
+\end{lstlisting}
+
+Um das Quellenverzeichnis anzugeben, schreiben wir:
+
+\begin{lstlisting}
+    \printbibliography
+\end{lstlisting}
 
 
 
