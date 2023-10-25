@@ -518,11 +518,6 @@ Um in \LaTeX\ eine mathematische Formel zu schreiben, muss man dem Kompilierer z
 \end{itemize}
 Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \in A$$ so aus.
 
-\paragraph*{Praktische Resourcen}
-\begin{itemize}
-    \item \href{https://tex.stackexchange.com/questions/12621/multi-line-equations-with-explanations-on-some-lines}{mehrzeilige Gleichungen mit Kommentaren}
-\end{itemize}
-
 \subsection{Grundlagen}
 \begin{figure}[H]
     \centering
@@ -551,6 +546,24 @@ Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \
 
 \end{tabular}
 \end{figure}
+
+\subsection{Mehrzeilige Gleichungen}
+\href{https://tex.stackexchange.com/questions/12621/multi-line-equations-with-explanations-on-some-lines}{mehrzeilige Gleichungen mit Kommentaren}
+\begin{align*}
+    0 & = 3x +5 & & \text{//} \colon 3 \\
+    0 & = x + \frac{5}{3} & & \text{//} -\frac{5}{3} \\
+    -\frac{5}{3} &  = x
+\end{align*}
+\begin{lstlisting}
+    \usepackage{amsmath}
+    
+    \begin{align*}
+        0 & = 3x +5 & & \text{//} \colon 3 \\
+        0 & = x + \frac{5}{3} & & \text{//} -\frac{5}{3} \\
+        -\frac{5}{3} &  = x
+    \end{align*}
+
+\end{lstlisting}
 
 
 \subsection{Megen und Logische Formeln}
@@ -622,6 +635,8 @@ Die optische Anpassung kann beispielsweise so aussehen:
 
 \lstinputlisting[firstline=2]{settings/listings.tex}
 
+\subsection{Algorithmen}
+Mit dem package \lstinline|algorithm2e| kann man Algorithmen schön formatieren. \href{https://tug.ctan.org/macros/latex/contrib/algorithm2e/doc/algorithm2e.pdf}{ausführliche Doku}
 
 
 
