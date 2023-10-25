@@ -74,7 +74,7 @@ Folgendes geht in \LaTeX\ quasi von selbst oder sehr einfach und in Word nur mit
 \begin{itemize}
     \item Überschriften werden immer richtig nummeriert (stell dir vor du musst alles ändern, wenn du nur eine Überschrift einfügst)
     \item Automatische Seitennummerierung (auch wenn sie erst auf Seite 2 oder so starten soll)
-    \item Automatisches Inhaltsverzeichnis mit richtiger Nummerrierung und Seitenzahl
+    \item Automatisches Inhaltsverzeichnis mit richtiger Nummerierung und Seitenzahl
     \item Referenzen auf Sektionen/Subsektionen/Abbildungen/... aktualisieren sich von selbst
     \item Abbildungen einfügen ohne dass Word den gesamten Text über drei Seiten durcheinander schiebt, dein Haus abfackelt, dein Hund kidnapt und dein Auto mit einer Kartoffel zerkratzt
     \item ein gut aussehendes Quellenverzeichnis
@@ -170,11 +170,11 @@ Keine Ahnung, finds selbst heraus.
 
         
 \sectionwithsubtitle{Worum geht's?}{Titelseite und Inhaltsverzeichnis}
-    Damit \LaTeX\ weiß, was auf der Titelseite Stehen soll, muss das zuerst definiert werden: Es kann alles in die Klammern geschrieben werden.
+    Damit \LaTeX\ weiß, was auf der Titelseite stehen soll, muss das zuerst definiert werden: Es kann alles in die Klammern geschrieben werden.
     \begin{lstlisting}
     \title{Titel des Dokuments}
     \author{Max Schmidt}
-    \date{Juli 23} % weglassen um automatisch das heutige Datum zuverwenden
+    \date{Juli 23} % weglassen um automatisch das heutige Datum zu verwenden
     \end{lstlisting}
     Um die Titelseite dann zu erstellen:
     \begin{lstlisting}
@@ -213,7 +213,7 @@ Keine Ahnung, finds selbst heraus.
         Schrift\textcolor{red}{f}\textcolor{orange}{a}\textcolor{yellow}{r}\textcolor{green}{b}\textcolor{blue}{e} & \lstinline|\textcolor{Farbe}{Text}| \\
         \textsuperscript{Hoch-} / \textsubscript{Tief}stellung & \lstinline|\textsuperscript{Hochgestellter Text}| \\
         & \lstinline|\textsubscript{Tiefgestellter Text}| \\
-        Zeilen- \\ umbruch & \lstinline|\\| oder \lstinline|\newline| \\
+        Zeilen- \\ Umbruch & \lstinline|\\| oder \lstinline|\newline| \\
         \end{tabular}
     \centering
     
@@ -230,7 +230,7 @@ Keine Ahnung, finds selbst heraus.
 
 \sectionwithsubtitle{Recht und Ordnung!}{Sections}
 
-\textbf{Sections} sind die einzelen Abschnitte des Dokuments, sie werden automatisch numerieriert und im Inhaltsverzeichnis aufgeführt.
+\textbf{Sections} sind die einzelnen Abschnitte des Dokuments, sie werden automatisch nummeriert und im Inhaltsverzeichnis aufgeführt.
 Einen neuen Abschnitt erstellt man so:
 \begin{lstlisting}
     \section{Name des Abschnitts}\label{kurzer-name}
@@ -367,12 +367,12 @@ Siehe auch: \href{https://www.overleaf.com/learn/latex/Lists}{Overleaf Dokumenta
 So macht man eine einfache Liste aus Bulltepoints:
 \begin{lstlisting}
     \usepackage{enumitem}
-    \setlist{nolistsep} %das reicht einmal im ganzen dokument und dient nur dazu abstand vor einer liste kleiner zu machen
-    \begin{itemize}[noitemsep] %das [noitemsep] ist optional und dient nur dazu den abstand zwischen den Bulltepoints huebscher zu machen
+    \setlist{nolistsep} %das reicht einmal im ganzen Dokument und dient nur dazu Abstand vor einer liste kleiner zu machen
+    \begin{itemize}[noitemsep] %das [noitemsep] ist optional und dient nur dazu den Abstand zwischen den Bulltepoints huebscher zu machen
         \item erster Punkt
         \item zweiter Punkt
         \item dritter Punkt
-        \item ja so gehts weiter
+        \item ja so geht's weiter
     \end{itemize}
 \end{lstlisting}
 So sieht die dann aus:
@@ -380,7 +380,7 @@ So sieht die dann aus:
     \item erster Punkt
     \item zweiter Punkt
     \item dritter Punkt
-    \item ja so gehts weiter
+    \item ja so geht's weiter
 \end{itemize}
 
 \subsubsection{Nummerierte Listen}
@@ -432,8 +432,6 @@ So sieht die dann aus:
 
 
 \subsection{Tabellen}
-\subsubsection{Grundgerüst einer Tabelle}
-
 \begin{tabular}{m{10cm} m{5cm}}
     Code: & Aussehen: \\
     \begin{lstlisting}
@@ -457,7 +455,7 @@ So sieht die dann aus:
     Zeile & Erklärung \\
     \hline
     1 & in den zweiten Klammer werden die Spalten definiert, jede Spalten wir durch einen Buchstaben 
-    representiert, l r c asdasdasdasdasdasdasd  \\
+    representiert, l (linksbündig), r (rechtsbündig) c (mittig)\\
 \end{tabular}
 
 
