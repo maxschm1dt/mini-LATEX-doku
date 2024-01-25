@@ -509,7 +509,7 @@ Später im Text kann man dann so auf die Abbildungsnummer zugreifen:
 
 % --------- KAPITEL ------------------
 
-\sectionwithsubtitle{Rechnen.}{Mathematische Formeln}
+\sectionwithsubtitle{Mathezauber}{Was man im Infostudium so an Sonderzeichen braucht}
 
 Siehe auch: \href{https://en.wikibooks.org/wiki/LaTeX/Mathematics}{Wikibooks \LaTeX\ Guide (en.wikibooks.org/wiki/LaTeX/Mathematics)}. \\
 
@@ -546,7 +546,8 @@ Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \
 		               & $ \sqrt[3]{x} $                     & \lstinline|$ \sqrt[3]{x} $|                     \\
 		Summe          & $ \sum_{i=1}^{n} x_i $              & \lstinline|$ \sum_{i=1}^{n} x_i $|              \\
 		               & $ \displaystyle\sum_{i=1}^{n} x_i $ & \lstinline|$ \displaystyle\sum_{i=1}^{n} x_i $| \\
-		Vergleiche     & $ < \leq \geq > $                   & \lstinline|$ < \leq \geq > $|
+		Vergleiche     & $ < \leq \geq > $                   & \lstinline|$ < \leq \geq > $|                   \\
+        Betrag         & $ \lvert x \rvert $                 & \lstinline|$ \lvert x \rvert $|                 \\
 	\end{tabular}
 \end{figure}
 
@@ -561,9 +562,9 @@ Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \
     \usepackage{amsmath}
     
     \begin{align*}
-        0 & = 3x +5 & & \text{//} \colon 3 \\
-        0 & = x + \frac{5}{3} & & \text{//} -\frac{5}{3} \\
-        -\frac{5}{3} &  = x
+        0            & = 3x +5           &  & \text{//} \colon 3     \\
+        0            & = x + \frac{5}{3} &  & \text{//} -\frac{5}{3} \\
+        -\frac{5}{3} & = x
     \end{align*}
 
 \end{lstlisting}
@@ -583,7 +584,42 @@ Inline sieht eine Formel dann so $ 2 + 2 = 3 $ aus und als eigener Absatz $$ a \
 	\end{tabular}
 \end{figure}
 
+\subsection{Graphen}
+Mit \lstinline|\usepackage{tikz}| kann man solche Graphen basteln:
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+        \node[main] (1) {$v_1$}; 
+        \node[main] (2) [above right of=1] {$v_2$}; 
+        \node[main] (3) [below right of=1] {$v_3$}; 
+        \node[main] (4) [below right of=2] {$v_4$};
+        \node[main] (5) [above right of=4] {$v_5$};
 
+        \draw[<->] (1) -- node[midway, above right, sloped, pos=0.1] {50} (2);
+        \draw[->] (2) -- node[midway, above right, sloped, pos=0.2] {10} (3);
+        \draw[->] (3) -- node[midway, above right, sloped, pos=0.5] {1} (4);
+        \draw[->] (1) to [out=270, in=270, looseness=2] node[midway, below right, sloped, pos=0.5] {40} (4);
+        \draw[->] (5) -- node[midway, above right, sloped, pos=0.8] {133} (2);
+        \draw[<->] (5) -- node[midway, above right, sloped, pos=0.8] {1} (4);
+    \end{tikzpicture}
+\end{figure}
+
+\begin{lstlisting}
+    \begin{tikzpicture}[node distance={15mm}, main/.style = {draw, circle}] 
+        \node[main] (1) {$g_1$}; 
+        \node[main] (2) [above right of=1] {$g_2$}; 
+        \node[main] (3) [below right of=1] {$g_3$}; 
+        \node[main] (4) [below right of=2] {$g_4$};
+        \node[main] (5) [above right of=4] {$s$};
+
+        \draw[<->] (1) -- node[midway, above right, sloped, pos=0.1] {50} (2);
+        \draw[->] (2) -- node[midway, above right, sloped, pos=0.2] {10} (3);
+        \draw[->] (3) -- node[midway, above right, sloped, pos=0.5] {1} (4);
+        \draw[->] (1) to [out=270, in=270, looseness=2] node[midway, below right, sloped, pos=0.5] {40} (4);
+        \draw[->] (5) -- node[midway, above right, sloped, pos=0.8] {133} (2);
+        \draw[<->] (5) -- node[midway, above right, sloped, pos=0.8] {1} (4);
+    \end{tikzpicture}
+\end{lstlisting}
 
 
 % --------- KAPITEL ------------------
