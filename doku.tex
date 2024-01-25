@@ -188,9 +188,12 @@ Keine Ahnung, finds selbst heraus.
     \tableofcontents
     \thispagestyle{empty}  %wenn auf der Seite keine Seitenzahl stehen soll
     \newpage %fuer einen Seitenumbruch
-        \end{lstlisting}
-
-
+    \end{lstlisting}
+    Um Seitenzahlen von hand zu Modifizieren, kann man einfach
+    \begin{lstlisting}
+    \setcounter{page}{x}
+    \end{lstlisting}
+    auf der Seite einfügen auf der die Seitenzahl x sein soll, alle weiteren Seiten werden dann ganz normal weiter hochgezählt.
 
 % --------- KAPITEL ------------------
 
@@ -250,8 +253,6 @@ Ein (Unter-)Abschnitt mit \textbf{Sternchen} wird nicht vom Inhaltsverzeichnis u
 \begin{lstlisting}
     \subsection*{Geheim} 
 \end{lstlisting}
-
-
 
 
 
