@@ -482,17 +482,22 @@ Ein Bild, das in unserem Ordner unter \textit{images/bild.png} gespeichert ist k
     \includegraphics[scale=1.5]{bild}
 \end{lstlisting}
 
-Wollen eine eher ordentlicher Darstellung mit Bildunterschrift, können wir eine \textit{figure} benutzen:
+\noindent Wollen eine eher ordentlicher Darstellung mit Bildunterschrift, können wir eine \textit{figure} benutzen:
 
 \begin{lstlisting}
     \begin{figure}
         \includegraphics[scale=1.5]{bild}
         \centering %zentriert die Darstellung mittig
         \caption{Eine passende Bildunterschrift zu unserem Bild}
+        \label{figure-passenderName} %ein label mit einem einzigartigem Namen um die Abbildung spaeter Referenzieren zu koennen
     \end{figure}
 \end{lstlisting}
+Später im Text kann man dann so auf die Abbildungsnummer zugreifen:
+\begin{lstlisting}
+    siehe Abbildung \ref{figure-passenderName}
+\end{lstlisting}
 
-Mit dem Package \textit{float} und der Option \textit{H} kann mann sicher stellen, dass die Darstellung genau an der Stelle im Dokument erscheint, in der sie auch im Code ist:
+\noindent Mit dem Package \textit{float} und der Option \textit{H} kann mann sicher stellen, dass die Darstellung genau an der Stelle im Dokument erscheint, in der sie auch im Code ist: dies kann aber sehr schnell zu Formatierungsproblemen führen.
 
 \begin{lstlisting}
     \usepackage{float}
