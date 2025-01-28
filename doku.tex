@@ -89,13 +89,13 @@ Zum mal Ausprobieren ist \href{https://www.overleaf.com/}{Overleaf (overleaf.com
 Einfach dort anmelden und anfangen.
 Es gibt dort auch \href{https://www.overleaf.com/latex/templates}{Vorlagen (overleaf.com/latex/templates)}, die man einfach öffnen und sofort benutzen kann. \\
 
-Nachteil davon ist, dass du es nur mit Internetverbindung benutzen kannst.
-Aber keine Sorge du kannst jeder Zeit hin und herwechseln.
+
+Wenn du vollkommen offline arbeiten möchtest, kannst du \LaTeX\ auch auf deinem PC installieren (siehe \autoref{Installation}).
 
 \subsection{Installation} \label{Installation}
 
 Hier installieren wir \LaTeX\ auf unserem PC.
-Das ist kurz lästig, aber da müssen wir durch. Alternative siehe \autoref{hernehmen}.
+Alternativ einfach Overleaf nutzen (siehe \autoref{hernehmen}).
 
 \subsubsection{Windows}
 
@@ -121,7 +121,7 @@ In der MikTex Console unter \textit{Updates} → \textit{Check for Updates} und 
 Keine Ahnung, finds selbst heraus.
 (Vielleicht hilft dir ja \href{https://tex.stackexchange.com/questions/220/i-want-to-start-using-latex-on-mac-os-x-where-do-i-start}{das}.)
 
-\subsection{Von Overleaf wechseln}
+\subsection{Von Overleaf zu lokal wechseln}
 
 \begin{enumerate}
 	\item Installation wie in \autoref{Installation}
@@ -137,13 +137,18 @@ Keine Ahnung, finds selbst heraus.
 
 
 
-
 % --------- KAPITEL ------------------
 
 \sectionwithsubtitle{Los geht's!}{Ein Dokument erstellen}
-Um ein Dokument zu erstellen einfach einen neuen Ordner erstellen und dann in VS Code
+
+Sobald du in \textbf{Overleaf} angemeldet bist, kannst du ein Projekt öffnen (z.B ein Template oder eine hochgeladene .zip) oder ein neues Projekt anlegen. 
+Wenn das Projekt geöffnet ist, siehst du ganz Links eine \textbf{Übersicht über die Dateien} in dem Projekt, rechts davon den \textbf{Editor} mit der geöffneten Datei und ganz rechts den \textbf{PDF-Viewer}.
+Es sollte mindestens eine Datei mit der Endung \verb|.tex| existieren. Das ist die Hauptdatei mit dem \LaTeX\-Code.
+
+Um \textbf{lokal auf deinem PC} ein Dokument zu erstellen (\autoref{Installation} notwendig), einfach einen neuen Ordner erstellen und dann in \textbf{VS-Code}
 eine neue Datei mit der Endung \verb|.tex| erstellen.
-Folgender Code ist eigentlich immer ein guter Start:
+
+Folgender \LaTeX -Code ist eigentlich immer ein guter Start:
 \begin{lstlisting}
     % mit % kann man ueberall Kommentare hinzufuegen, die nicht im PDF auftauchen
     \documentclass{article} 
@@ -155,8 +160,12 @@ Folgender Code ist eigentlich immer ein guter Start:
     Hier koennte Ihre Werbung stehen!
     \end{document}
     \end{lstlisting}
-Mit dem \textbf{grünen Pfeil} oben rechts in VS Code kann das Dokument das erste Mal \textbf{kompiliert} (d.h. das PDF erstellt) werden.
-Ab dann kann immer mit \verb|Strg + S| gespeichert und kompiliert werden.
+
+In \textbf{Overleaf} kann mit dem \textbf{grünen (Re-)Compile} oder auch mit \verb|Strg + S| das PDF erstellt bzw. aktualisiert werden.
+
+
+
+In \textbf{VS-Code} kann mit dem \textbf{grünen Pfeil} oben rechts das Dokument das erste Mal kompiliert (d.h. das PDF erstellt) werden; ab dann kann immer mit \verb|Strg + S| gespeichert und kompiliert werden.
 
 
 \textbf{Tipp:} Man kann in VS-Code Fenster per Drag-and-Drop nebeneinander schieben.
