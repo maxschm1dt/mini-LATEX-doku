@@ -101,7 +101,7 @@ Alternativ einfach Overleaf nutzen (siehe \autoref{hernehmen}).
 
 \textbf{Falls diese Anleitung nicht hilft, habe ich ein \href{https://www.youtube.com/watch?v=NnqxgMVeMiw}{Youtube Tutorial (youtube.com/watch?v=NnqxgMVeMiw)} erstellt.}\\
 
-Für Windoofs: Die drei Sachen herunterladen und installieren:
+Die drei Sachen herunterladen und installieren:
 \begin{itemize}
 	\item \href{https://code.visualstudio.com/}{Visual Studio Code (code.visualstudio.com)}
 	\item \href{https://miktex.org/download}{MiKTeX (miktex.org/download)}
@@ -118,12 +118,38 @@ In der MikTex Console unter \textit{Updates} → \textit{Check for Updates} und 
 \end{itemize}
 
 \subsubsection{MacOS}
-Keine Ahnung, finds selbst heraus.
-(Vielleicht hilft dir ja \href{https://tex.stackexchange.com/questions/220/i-want-to-start-using-latex-on-mac-os-x-where-do-i-start}{das}.)
 
+Diese beiden Apps / Packages herunterladen und installieren:
+\begin{itemize}
+    \item \href{https://code.visualstudio.com/}{Visual Studio Code (code.visualstudio.com)}
+    \item \href{https://www.tug.org/mactex/}{MacTex (https://www.tug.org/mactex/)}
+\end{itemize}
+Am einfachsten geht das mit \href{https://brew.sh/}{brew (brew.sh)}:
+\begin{lstlisting}
+    brew install --cask mactex
+    brew install --cask visual-studio-code
+\end{lstlisting}
+Ich musste noch von Hand den TeX Compiler zum PATH hinzufügen (wenn du Zsh nutzt, geht das so):
+\begin{lstlisting}
+    echo 'export PATH="/Library/TeX/texbin:$PATH"' >> ~/.zshrc
+\end{lstlisting}
+Dann die TeX Live Utility App öffnen und die vorgeschlagenen Updates für die TeX-Packages installieren. 
+Zu guter Letzt in VS Code die Extension \href{https://open-vsx.org/extension/James-Yu/latex-workshop}{LaTeX Workshop} installieren.
 
-
-
+\paragraph*{Sonderzeichen}
+Weil Apple sich zu fein ist, alle Zeichen auf die Tastatur zu drucken hier eine Zusammenfassung der Zeichen die man für \LaTeX braucht:
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|>{\raggedright\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}p{8cm}|}
+        \hline
+        \textbf{Zeichen} & \textbf{Tastenkombination auf Mac} \\
+        \hline
+        \texttt{\textbackslash} & \texttt{Option + Shift + 7} \\
+        \texttt{[ / ] } & \texttt{Option  + 5 / 6} \\
+        \texttt{\{ / \}} & \texttt{Option + 8 / 9} \\
+        \hline
+    \end{tabular}
+\end{table}
 
 
 % --------- KAPITEL ------------------
@@ -700,14 +726,6 @@ Folgende Farben können dann benutzt werden:
 Andere Farben können so definiert werden:
 
 \lstinputlisting[firstline=2]{settings/colors.tex}
-
-
-
-
-
-% --------- KAPITEL ------------------
-
-\sectionwithsubtitle{Wunderschöner \LaTeX-Zauber}{Formatierungsbeispiele}
 
 
 \end{document}
